@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
 
 :root {
+    /* Try to use correct naming conventions. Variables in CSS are usually all lower */
+
     /*Primary*/
     /*accent*/
     --Very-Dark-Magenta: hsl(300, 43%, 22%);
@@ -16,37 +18,59 @@
     --White: hsl(0, 0%, 100%);
     /*Backgroun*/
     --Very-Light-Gray: hsl(0, 0%, 98%);
-
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
 }
 
 body {
+    /* Try to keep as little CSS on body and html tags as possible. Only what is needed to be able to make the design work. */
+
+    /* Font names that are not connected with a dash (sans-serif) shoudl have quotes around them. Single quotes are the norm here but double quotes work fne too  */
     font-family: League Spartan, sans-serif;
+
+    /* Setting the base font-size is done on the HTML element. It creates the base size for using relative to the base size font-size with rem or em. The benefit of using rem and em is you can make all text larger by changing the font-size in the HTML element. The default is 16 pixels. In this example from Front-end mentor, I think 15px is never used. All fonts are larger... So i dont get why the base should be set to 15px :) Maybe its just the exercise to set it on HTML */
     font-size: 15px;
+
     font-weight: 400;
+
+    /* I prefer to do that on the elements itself so I dont have to reset it later when making changes for other device sizes */
     text-align: center;
+
+    /* If you start with mobile first and the elements are stacked vertically, there is no need to add flexbox to the mobile. "Column" layout is the default behavior. You can add it to the elements that need it when you are making eg the desktop version */
     display: flex;
     flex-direction: column;
+
+    /* Using this is better then text align center but I prefer to use it on the elements that need it.  */
     justify-content: center;
     align-items: center;
+
+    /* you can add height: 100vh here too to be able to center the content vertically */
     min-height: 100vh;
+
+    /* I did not find the grey anywhere in the design but baybe I overlooked it */
     background-color: var(--Very-Light-Gray);
 }
 
 .container {
+    /* all flex definations are only needed in the desktop layout You can remove them for the mobile version */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     background-color: var(--White);
+
+    /* The container should not have a width, since flexbow will make it full width. */
     width: 100%;
+
+    /* This should be removed. It conflicts with the 100% above ;) */
     max-width: 375px;
+
+    /* Great! :) */
     background: url(./images/bg-pattern-top-mobile.svg) left top no-repeat,
         url(./images/bg-pattern-bottom-mobile.svg) right bottom no-repeat;
 }
@@ -68,7 +92,6 @@ body {
 
 span {
     letter-spacing: 5px;
-    ;
 }
 
 #second,
