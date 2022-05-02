@@ -17,7 +17,7 @@
     /*White paragraphs*/
     --white: hsl(0, 0%, 100%);
     /*Backgroun*/
-    --very-light-gray: hsl(0, 0%, 98%);
+    --very-light-gray: hsl(0, 9%, 87%);
 }
 
 * {
@@ -32,120 +32,102 @@ html {
     height: 100vh;
     min-height: 100vh;
     font-size: 15px;
+    text-align: center;
 }
 
 body {
     /* Try to keep as little CSS on body and html tags as possible. Only what is needed to be able to make the design work. */
-
-    /* I prefer to do that on the elements itself so I dont have to reset it later when making changes for other device sizes */
-    /* text-align: center;*/
-
-    /* If you start with mobile first and the elements are stacked vertically, there is no need to add flexbox to the mobile. "Column" layout is the default behavior. You can add it to the elements that need it when you are making eg the desktop version
-    display: flex;
-    flex-direction: column; */
-
-    /* Using this is better then text align center but I prefer to use it on the elements that need it.  */
-    /*justify-content: center;
-    align-items: center;*/
     height: 100vh;
     /* you can add height: 100vh here too to be able to center the content vertically */
     min-height: 100vh;
-
-    /* I did not find the grey anywhere in the design but baybe I overlooked it */
-    background-color: var(--very-light-gray);
 }
 
 .container {
-    /* all flex definations are only needed in the desktop layout You can remove them for the mobile version 
-  /* The container should not have a width, since flexbow will make it full width.
-    width: 100%;*/
-
-    /* This should be removed. It conflicts with the 100% above ;) 
-    max-width: 375px;*/
-    background-color: var(--White);
-
+    background-color: var(--white);
     /* Great! :) */
     background: url(./images/bg-pattern-top-mobile.svg) left top no-repeat,
         url(./images/bg-pattern-bottom-mobile.svg) right bottom no-repeat;
     background-size: cover;
     position: relative;
-    max-width: 100%;
-    text-align: center;
+    min-width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.top {
+    display: flex;
+}
+
+.top-section {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    margin-bottom: 50px;
+}
+
+.rating-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 50%;
+
 }
 
 .rating {
-    /*display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;*/
-    background-color: var(--light-grayish-magenta);
+    background-color: var(--dark-grayish-magenta);
     border-radius: 10px;
     text-align: center;
     color: var(--very-dark-magenta);
-    max-width: 350px;
     height: 50px;
-    margin: 30px 30px 0px;
-    padding: 20px;
 }
 
 span {
     letter-spacing: 5px;
 }
 
-#second,
-#third {
-    margin-top: 15px;
-}
-
 .card-section {
-    /*display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;*/
-    margin: 30px 30px;
+    display: flex;
+    flex-direction: row;
+    margin: 30px;
+    gap: 30px;
 }
 
 .card {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    flex-direction: column;
     background-color: var(--very-dark-magenta);
     border-radius: 10px;
     text-align: left;
-    color: var(--White);
-    max-width: 350px;
-    min-height: 240px;
+    color: var(--white);
+    max-height: 240px;
     padding: 40px;
 }
 
-.card-title {
-    margin-bottom: 0%;
-    padding-right: 10px;
-    color: var(--white);
+.card-top {
+    display: flex;
+    flex-direction: row;
 }
 
-.card-subtitle {
-    margin-left: 60px;
-    margin-top: -40px;
+.name {
+    font-weight: 500;
+}
+
+
+.buyer {
     color: var(--soft-pink);
-}
+    font-weight: 300;
 
-.card-para {
-    margin: 0;
-    color: var(--light-grayish-magenta);
 }
 
 img {
     border-radius: 50px;
     width: 40px;
-    margin: 0 20px 20px 0;
 }
 
 h1 {
     color: var(--very-dark-magenta);
     font-weight: 700;
-    font-size: 40px;
+    font-size: 50px;
     margin: 40px 20px 20px;
 }
 
@@ -155,9 +137,11 @@ p {
     margin: 0 30px;
 }
 
-.rating-para {
+blockquote {
     font-weight: 500;
-    color: var(--very-dark-magenta);
+    color: var(--white);
+    line-height: 1.25;
+    margin-top: 30px;
 }
 
 footer {
@@ -172,15 +156,13 @@ a {
     font-weight: 400;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 900px) {
     .container {
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         min-height: 100vh;
-        max-width: 1200px;
         margin-bottom: 10px;
     }
 
@@ -190,11 +172,7 @@ a {
 
     .rating-section {
         display: flex;
-        flex-direction: row;
     }
 
-    .card-section {
-        display: flex;
-        flex-direction: row;
-    }
+
 }
