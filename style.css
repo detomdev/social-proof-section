@@ -55,12 +55,9 @@ body {
 
 .top {
     display: flex;
-    border: 1px solid red;
 }
 
-.bottom {
-    border: 1px solid red;
-}
+.bottom {}
 
 .top-section {
     display: flex;
