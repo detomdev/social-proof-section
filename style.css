@@ -36,27 +36,30 @@ html {
 }
 
 body {
-    /* Try to keep as little CSS on body and html tags as possible. Only what is needed to be able to make the design work. */
     height: 100vh;
-    /* you can add height: 100vh here too to be able to center the content vertically */
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     background-color: var(--white);
-    /* Great! :) */
-    background: url(./images/bg-pattern-top-mobile.svg) left top no-repeat,
-        url(./images/bg-pattern-bottom-mobile.svg) right bottom no-repeat;
-    background-size: cover;
+    background: url(./images/bg-pattern-top-desktop.svg) left top no-repeat,
+        url(./images/bg-pattern-bottom-desktop.svg) right bottom no-repeat;
+    background-size: contain;
     position: relative;
-    min-width: 100%;
-    max-width: 1200px;
     margin: 0 40px;
-    /*margin: 0 auto;*/
+    width: 100%;
 }
 
 .top {
@@ -66,29 +69,43 @@ body {
 .top-section {
     display: flex;
     flex-direction: column;
-    max-width: 40%;
-    margin-bottom: 50px;
+    flex-basis: 45%;
+    margin: 40px 30px 30px;
+    text-align: left;
 }
 
 .rating-section {
+    flex-basis: 55%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
     margin-top: 45px;
-    padding: 0 70px;
+    gap: 20px;
 }
 
 .rating {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    padding: 20px 65px 20px 65px;
+    border-radius: 12px;
     background-color: var(--light-grayish-magenta);
-    border-radius: 10px;
-    text-align: center;
-    color: var(--very-dark-magenta);
-    height: 50px;
-    padding: 10px 50px;
-    margin-bottom: 20px;
+}
+
+.rating-para,
+.star {
+    margin-bottom: 0;
+}
+
+#first-rating {
+    align-self: flex-start;
+}
+
+#second-rating {
+    align-self: center;
+}
+
+#third-rating {
+    align-self: flex-end;
 }
 
 span {
@@ -109,7 +126,6 @@ span {
     border-radius: 10px;
     text-align: left;
     color: var(--white);
-    max-height: 240px;
     padding: 40px;
 }
 
@@ -118,38 +134,44 @@ span {
     flex-direction: row;
 }
 
-.name {
-    font-weight: 500;
+.info {
+    margin-left: 20px;
 }
 
+.name {
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 0;
+}
 
 .buyer {
     color: var(--soft-pink);
     font-weight: 300;
-
+    margin-bottom: 0%;
 }
 
 img {
     border-radius: 50px;
-    width: 40px;
+    width: 50px;
+    height: 50px;
 }
 
 h1 {
     color: var(--very-dark-magenta);
     font-weight: 700;
-    font-size: 50px;
-    margin: 40px 20px 20px;
+    font-size: 60px;
+    margin-bottom: 20px;
 }
 
 p {
-    color: var(--dark-grayish-magenta));
+    color: var(--dark-grayish-magenta);
     line-height: 1.5;
-    margin: 0 30px;
+    margin: 0 0 30px;
 }
 
 blockquote {
     font-weight: 500;
-    color: var(--white);
+    color: var(--light-grayish-magenta);
     line-height: 1.25;
     margin-top: 30px;
 }
@@ -166,23 +188,28 @@ a {
     font-weight: 400;
 }
 
-@media (min-width: 900px) {
-    .container {
+/*@media (max-width: 1100px) {
+
+    body {
+        background-image: url(./images/bg-pattern-top-mobile.svg), url(./images/bg-pattern-bottom-mobile.svg);
+    }
+
+    .container,
+    .main,
+    .top-section,
+    .rating-section,
+    .card-section {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        max-width: 375;
         min-height: 100vh;
         margin-bottom: 10px;
     }
 
     .top-section {
-        text-align: left;
-    }
-
-    .rating-section {
-        display: flex;
-    }
-
-
+        text-align: center;
+        width: auto;
+    }*/
 }
