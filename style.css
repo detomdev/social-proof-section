@@ -40,10 +40,6 @@ body {
     min-height: 100vh;
 }
 
-main {
-    border: 1px solid red;
-}
-
 .container {
     display: flex;
     flex-direction: column;
@@ -54,12 +50,18 @@ main {
         url(./images/bg-pattern-bottom-desktop.svg) right bottom no-repeat;
     background-size: contain;
     position: relative;
-    margin: 0 40px;
     height: 100%;
 }
 
 .top {
     display: flex;
+    max-width: 80%;
+    border: 1px solid red;
+
+}
+
+.bottom {
+    border: 1px solid red;
 }
 
 .top-section {
@@ -110,7 +112,7 @@ span {
 
 .top,
 .card-section {
-    max-width: 100%;
+    max-width: 1108px;
 }
 
 .card-section {
