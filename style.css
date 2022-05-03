@@ -43,6 +43,10 @@ body {
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: var(--white);
     /* Great! :) */
     background: url(./images/bg-pattern-top-mobile.svg) left top no-repeat,
@@ -51,7 +55,8 @@ body {
     position: relative;
     min-width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 40px;
+    /*margin: 0 auto;*/
 }
 
 .top {
@@ -71,13 +76,12 @@ body {
     align-items: center;
     margin-top: 45px;
     padding: 0 70px;
-    border: 1px solid red;
 }
 
 .rating {
     display: flex;
     justify-content: center;
-    align-items:flex-start;
+    align-items: flex-start;
     background-color: var(--light-grayish-magenta);
     border-radius: 10px;
     text-align: center;
