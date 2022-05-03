@@ -48,16 +48,14 @@ body {
     background-color: var(--white);
     background: url(./images/bg-pattern-top-desktop.svg) left top no-repeat,
         url(./images/bg-pattern-bottom-desktop.svg) right bottom no-repeat;
-    background-size: contain;
-    position: relative;
     height: 100%;
+    padding: 0 150px;
+
 }
 
 .top {
     display: flex;
-    max-width: 80%;
     border: 1px solid red;
-
 }
 
 .bottom {
@@ -118,8 +116,6 @@ span {
 .card-section {
     display: flex;
     flex-direction: row;
-    margin: 30px;
-    gap: 30px;
 }
 
 .card {
@@ -130,6 +126,10 @@ span {
     text-align: left;
     color: var(--white);
     padding: 40px;
+}
+
+.card:not(last-of-type) {
+    margin-right: 30px;
 }
 
 .card-top {
